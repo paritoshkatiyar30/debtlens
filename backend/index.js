@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./src/routes/authRoutes');
 const salaryRoutes = require('./src/routes/salaryRoutes');
+const aiRoutes = require('./src/routes/aiRoutes');
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/salary', salaryRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Test route
 app.get('/', (req, res) => {
