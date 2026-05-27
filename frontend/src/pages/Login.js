@@ -14,7 +14,7 @@ function Login() {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('http://debtlens-backend.onrender.com/api/auth/login', {
+      const res = await axios.post('https://debtlens-backend.onrender.com/api/auth/login', {
         email,
         password
       });

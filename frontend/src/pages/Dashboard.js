@@ -15,7 +15,7 @@ function Dashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) { navigate('/login'); return; }
-    axios.get('http://debtlens-backend.onrender.com/api/auth/me', {
+    axios.get('https://debtlens-backend.onrender.com/api/auth/me', {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setUser(res.data.user))
@@ -31,7 +31,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        'http://debtlens-backend.onrender.com/api/salary/calculate',
+        'https://debtlens-backend.onrender.com/api/salary/calculate',
         { ctc: parseFloat(ctc) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -48,7 +48,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        'http://debtlens-backend.onrender.com/api/ai/advice',
+        'https://debtlens-backend.onrender.com/api/ai/advice',
         { ctc: parseFloat(ctc), breakdown },
         { headers: { Authorization: `Bearer ${token}` } }
       );
